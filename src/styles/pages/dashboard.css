@@ -1,0 +1,140 @@
+#page-dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+#page-dashboard main {
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.orphanage-registered {
+  width: 100%;
+  max-width: 1160px;
+  margin-top: 64px;
+  margin-left: 165px;
+  padding: 20px;
+
+  /* background: #FFFFFF; */
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.orphanage-registered .title-container::after {
+  content: '';
+  width: 1120px;
+  height: 1px;
+  background-color: #D3E2E5;
+  display: block;
+}
+
+.orphanage-registered .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orphanage-registered .title p {
+  font-size: 32px;
+  color: #4D6F80;
+  font-weight: 600;
+}
+
+.orphanage-registered .title span {
+  font-size: 16px;
+  color: #8FA7B2;
+}
+
+.orphanage-registered .orphanages-container {
+  width: 100%;
+  margin: 10px auto;
+
+  /* background: #FFFFFF; */
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
+}
+
+.orphanages-container .orphanages {
+  width: 544px;
+  margin: 10px auto;
+
+  background: #FFFFFF;
+  border: 1px solid #D3E2E5;
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.orphanages-container .orphanages .image-orphanage > img {
+  width: 100%;
+  height: 227px;
+  object-fit: cover;
+}
+
+.orphanages-container .orphanages .manager-menu {
+  width: 100%;
+  height: 75px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orphanages-container .orphanages .manager-menu p {
+  font-size: 24px;
+  color: #4D6F80;
+  padding: 20px;
+}
+
+.orphanages-container .orphanages .manager-menu .buttons-container {
+  width: 104px;
+  height: 48px;
+
+  margin-right: 20px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orphanages-container .orphanages .manager-menu a,
+.orphanages-container .orphanages .manager-menu button {
+  width: 48px;
+  height: 48px;
+
+  border: 0;
+
+  background: #EBF2F5;
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+
+  transition: background-color 0.2s;
+}
+
+.orphanages-container .orphanages .manager-menu a:hover,
+.orphanages-container .orphanages .manager-menu button:hover {
+  background: #D1EDF2;
+}
+
+.orphanages-container .no-orphanage {
+  width: 1120px;
+  height: 470px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -41,6 +41,8 @@
   overflow: hidden;
   outline: none;
 
+  margin-top: 10px;
+
   opacity: 0.6;
 }
 
@@ -52,7 +54,6 @@
   width: 100%;
   height: 88px;
   object-fit: cover;
-
 }
 
 .orphanage-details .orphanage-details-content {
@@ -153,7 +154,7 @@
   height: 64px;
   border: 0;
   cursor: pointer;
-  background: #3CDC8C;
+  background: #37C77F;
   border-radius: 20px;
   color: #FFFFFF;
   font-weight: 800;
@@ -170,5 +171,5 @@
 }
 
 .orphanage-details .orphanage-details-content button.contact-button:hover {
-  background: #36CF82;
+  background: #3EE08F;
 }

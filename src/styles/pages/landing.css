@@ -59,6 +59,31 @@
   font-weight: 800;
 }
 
+.content-wrapper button {
+  width: 222px;
+  height: 73px;
+
+  border: 0;
+
+  background: #12D4E0;
+  border-radius: 16px;
+  color: #fff;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+
+  transition: background-color 0.2s;
+}
+
+.content-wrapper button:hover {
+  background: #96FEFF;
+  color: #15C3D6;
+}
+
 .content-wrapper .enter-app {
   position: absolute;
   right: 0;

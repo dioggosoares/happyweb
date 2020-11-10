@@ -1,0 +1,99 @@
+aside.app-sidebar-dashboard {
+  position: fixed;
+  height: 100%;
+  padding: 32px 24px;
+  background: linear-gradient(329.54deg, #15B6D6 0%, #15D6D6 100%);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+aside.app-sidebar-dashboard img {
+  width: 48px;
+}
+
+aside.app-sidebar-dashboard .menu-dashboard {
+  width: 100%;
+  height: 110px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+aside.app-sidebar-dashboard .menu-dashboard a,
+aside.app-sidebar-dashboard .menu-dashboard button {
+  width: 48px;
+  height: 48px;
+
+  border: 0;
+
+  background: #12AFCB;
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+
+  transition: background-color 0.2s;
+}
+
+aside.app-sidebar-dashboard .menu-dashboard a:hover,
+aside.app-sidebar-dashboard .menu-dashboard button:hover {
+  background: #FFD666;
+}
+
+aside.app-sidebar-dashboard .menu-dashboard button.active {
+  background: #FFD666;
+  cursor: default;
+}
+
+aside.app-sidebar-dashboard .menu-dashboard .indicator-show {
+  display: block;
+  position: absolute;
+  margin-top: -9px;
+  margin-left: 6px;
+
+  width: 10px;
+  height: 10px;
+
+  background: #FFD666;
+  border: 2px solid #12AFCB;
+  border-radius: 30px;
+}
+
+aside.app-sidebar-dashboard .menu-dashboard .indicator-hide {
+  display: none;
+}
+
+aside.app-sidebar-dashboard footer a,
+aside.app-sidebar-dashboard footer button {
+  width: 48px;
+  height: 48px;
+
+  border: 0;
+
+  background: #12AFCB;
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  outline: none;
+}
+
+aside.app-sidebar-dashboard footer a:hover,
+aside.app-sidebar-dashboard footer button:hover {
+  background: #17D6EB;
+}

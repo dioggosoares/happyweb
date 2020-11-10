@@ -1,0 +1,169 @@
+#page-signup {
+  display: flex;
+}
+
+#page-signup main {
+  flex: 1;
+
+  margin-left: 700px;
+}
+
+form.create-signup-form {
+  width: 520px;
+  height: 540px;
+  margin: 48px auto;
+
+  background: #FFFFFF;
+  border: 1px solid #D3E2E5;
+  border-radius: 20px;
+
+  padding: 64px 80px;
+
+  overflow: hidden;
+}
+
+form.create-signup-form fieldset {
+  border: 0;
+}
+
+form.create-signup-form fieldset + fieldset {
+  margin-top: 80px;
+}
+
+form.create-signup-form fieldset legend {
+  width: 100%;
+
+  font-size: 32px;
+  line-height: 34px;
+  color: #5C8599;
+  font-weight: 700;
+
+  border-bottom: 1px solid #D3E2E5;
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+}
+
+form.create-signup-form .input-block + .input-block + .checkbox-block {
+  margin-top: 24px;
+}
+
+form.create-signup-form .input-block label {
+  display: flex;
+  color: #8FA7B3;
+  margin-bottom: 8px;
+  line-height: 24px;
+}
+
+form.create-signup-form .input-block label span {
+  font-size: 14px;
+  color: #8FA7B3;
+  margin-left: 24px;
+  line-height: 24px;
+}
+
+form.create-signup-form .input-block .show-error {
+  display: block;
+  font-size: 14px;
+  color: #D6487B;
+
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+form.create-signup-form .input-block .hide-error {
+  display: none;
+}
+
+form.create-signup-form .input-block input {
+  width: 100%;
+  height: 64px;
+  padding: 0 16px;
+
+  background: #F5F8FA;
+  border: 1px solid #D3E2E5;
+  border-radius: 20px;
+  outline: none;
+  color: #5C8599;
+}
+
+form.create-signup-form .checkbox-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #8FA7B3;
+  margin-top: -20px;
+  margin-bottom: 8px;
+  line-height: 24px;
+}
+
+form.create-signup-form .checkbox-block label {
+  display: flex;
+  color: #8FA7B3;
+  margin-bottom: 8px;
+  line-height: 24px;
+}
+
+form.create-signup-form .checkbox-block  span {
+  color: #8FA7B3;
+  margin-right: 14px;
+  margin-left: -30px;
+  line-height: 24px;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+form.create-signup-form .checkbox-block input[type=checkbox] {
+    all: unset;
+    border: 1px solid black;
+  width: 24px;
+  height: 24px;
+  outline: none;
+
+  border: 1px solid #D3E2E5;
+  border-radius: 8px;
+}
+
+form.create-signup-form .checkbox-block input[type=checkbox]:checked {
+  background: url('../../images/checked.svg') no-repeat;
+  color: #fff;
+}
+
+form.create-signup-form .checkbox-block .esqueci-senha {
+  text-decoration: none;
+  color: #8FA7B2;
+}
+
+form.create-signup-form button.confirm-button {
+  margin-top: 24px;
+
+  width: 100%;
+  height: 64px;
+  border: 0;
+  cursor: pointer;
+  background: #37C77F;
+  border-radius: 20px;
+  color: #FFFFFF;
+  font-weight: 800;
+  outline: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color 0.2s;
+}
+
+form.create-signup-form button.confirm-button svg {
+  margin-right: 16px;
+}
+
+form.create-signup-form button.confirm-button:hover {
+  background: #9BE3BF;
+}

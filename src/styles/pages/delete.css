@@ -1,0 +1,105 @@
+#page-delete {
+  width: 100vw;
+  height: 100vh;
+  background: #FF669D;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#page-delete .content-wrapper {
+  width: 100%;
+  max-width: 1100px;
+
+  height: 100%;
+  max-height: 550px;
+
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: url('../../images/delete.svg') no-repeat 80% center;
+
+  text-align: center;
+}
+
+#page-delete .content-wrapper main {
+  max-width: 350px;
+  margin-top: 90px;
+}
+
+#page-delete .content-wrapper main h2 {
+  font-size: 80px;
+  font-weight: 800;
+  line-height: 80px;
+}
+
+#page-delete .content-wrapper main p {
+  margin-top: 40px;
+  font-size: 24px;
+  line-height: 34px;
+}
+
+#page-delete .content-wrapper .buttons-container {
+  height: 330px;
+  max-height: 330px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 40px;
+}
+
+#page-delete .content-wrapper .buttons-container button {
+  width: 243px;
+  height: 64px;
+
+  background: #D6487B;
+  border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+
+  border: 0;
+  cursor: pointer;
+
+  position: relative;
+  margin-left: 55px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color 0.2s;
+}
+
+#page-delete .content-wrapper .buttons-container button:hover {
+  background: #FF81AE;
+}
+
+#page-delete .content-wrapper .buttons-container .enter-app {
+  width: 243px;
+  height: 64px;
+
+  background: #D6487B;
+  border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+
+  position: relative;
+  margin-left: 55px;
+  margin-bottom: 80px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color 0.2s;
+}
+
+#page-delete .content-wrapper .buttons-container .enter-app:hover {
+  background: #FF81AE;
+}

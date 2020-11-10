@@ -14,22 +14,41 @@ interface Orphanage {
   latitude: number;
   longitude: number;
   name: string;
+  published: boolean;
 }
 
 function OrphanagesMap() {
   const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
+  const [latitude, setLatitude] = useState(0);
+  const [longitude, setLongitude] = useState(0);
+
+  const pending = orphanages.filter(function(orphanages){
+    return orphanages.published === true;
+  })
 
   useEffect(() => {
     api.get('orphanages').then(response => {
-      setOrphanages(response.data);
+
+      if(response.data) {
+        setOrphanages(response.data);
+      }
+
     });
-  }, []);
+
+    navigator.geolocation.getCurrentPosition((position) => {
+      setLatitude(position.coords.latitude);
+      setLongitude(position.coords.longitude);
+    });
+
+  }, [orphanages]);
 
   return (
     <div id="page-map">
       <aside>
         <header>
-          <img src={mapMarkerImg} alt="Happy"/>
+          <Link to='/'>
+            <img src={mapMarkerImg} alt="Happy"/>
+          </Link>
 
           <h2>Escolha um orfanato no mapa</h2>
           <p>Muitas crianças estão esperando a sua visita :)</p>
@@ -42,33 +61,54 @@ function OrphanagesMap() {
       </aside>
 
       <Map
-        center={[-15.8540129,-48.009771]}
-        zoom={11}
+        center={[latitude, longitude]}
+        zoom={12.5}
         style={{ width: '100%', height: '100%' }}
       >
-        {/*<TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />*/}
         <TileLayer
           url={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
         />
 
-        {orphanages.map(orphanage => {
-          return (
-            <Marker
-              key={orphanage.id}
-              icon={mapIcon}
-              position={[orphanage.latitude, orphanage.longitude]}
-            >
-              <Popup closeButton={false} minWidth={240} maxWidth={240} className="map-popup">
-                {orphanage.name}
-                <Link to={`/orphanages/${orphanage.id}`}>
-                  <FiArrowRight size={20} color="#fff" />
-                </Link>
-              </Popup>
-            </Marker>
-          )
-        })}
+        {orphanages.length !== 0
+        && (
+          orphanages.map((orphanage, index) => {
+            return (
+              <div>
+                {orphanage.published
+                  ?
+                  (
+                    <Marker
+                      key={orphanage.id}
+                      icon={mapIcon}
+                      position={[orphanage.latitude, orphanage.longitude]}
+                    >
+                      <Popup closeButton={false} minWidth={240} maxWidth={240} className="map-popup">
+                        {orphanage.name}
+                        <Link to={`/orphanages/${orphanage.id}`}>
+                          <FiArrowRight size={20} color="#fff" />
+                        </Link>
+                      </Popup>
+                    </Marker>
+                  )
+                  : null
+                }
+              </div>
+            )
+          })
+        )}
       </Map>
 
+      {orphanages.length !== 0
+        ? (
+          <div className="footer">
+            <span className="footerText">{pending.length} orfanatos encontrados</span>
+          </div>
+        ) : (
+          <div className="footer">
+            <span className="footerText">Nenhum orfanato encontrados</span>
+          </div>
+        )
+      }
       <Link to="/orphanages/create" className="create-orphanage">
         <FiPlus size={32} color="#fff" />
       </Link>
@@ -77,3 +117,4 @@ function OrphanagesMap() {
 }
 
 export default OrphanagesMap;
+// <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />

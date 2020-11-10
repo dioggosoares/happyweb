@@ -9,13 +9,15 @@ import Sidebar from "../components/Sidebar";
 import mapIcon from "../utils/mapIcon";
 import api from "../services/api";
 
-import '../styles/pages/orphanage.css';
+import noimage from '../images/noimagefound.svg';
 
+import '../styles/pages/orphanage.css';
 interface Orphanage {
   latitude: number;
   longitude: number;
   name: string;
   about: string;
+  contact: string;
   instructions: string;
   opening_hours: string;
   open_on_weekends: string;
@@ -24,7 +26,6 @@ interface Orphanage {
     url: string;
   }>;
 }
-
 interface OrphanageParams {
   id: string;
 }
@@ -44,15 +45,21 @@ export default function Orphanage() {
     return <p>Carregando...</p>;
   }
 
+  function handleWhatsappContact(phonenumber: string) {
+    phonenumber = phonenumber.replace(/\s/g, "");
+
+    window.open(`https://api.whatsapp.com/send?phone=55${phonenumber}&text=Olá, gostaria de fazer uma visita`, '_blank');
+  }
+
   return (
     <div id="page-orphanage">
       <Sidebar />
 
       <main>
         <div className="orphanage-details">
-          {orphanage.images[0].url !== undefined
+          {orphanage.images.length !== 0
           ? <img src={orphanage.images[activeImageIndex].url} alt={orphanage.name} />
-          : <img src="https://cdn.thinglink.me/gfx/icons/missing-thumbnail.png" alt="" /> }
+          : <img src={noimage} alt="" /> }
 
           <div className="images">
             {orphanage.images.map((image, index) => {
@@ -126,7 +133,11 @@ export default function Orphanage() {
               }
             </div>
 
-            <button type="button" className="contact-button">
+            <button
+              type="button"
+              className="contact-button"
+              onClick={() => handleWhatsappContact(orphanage.contact)}
+            >
               <FaWhatsapp size={20} color="#FFF" />
               Entrar em contato
             </button>
